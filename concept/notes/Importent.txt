@@ -1,0 +1,169 @@
+1. What are the different data types present in javascript?
+- String - It represents a series of characters and is written with quotes. 
+   var str = "manish"
+
+- Number - It represents a number and can be written with or without decimals.
+   var x = 3;
+
+Boolean - It represents a logical entity and can have only two values 
+var a = 2;
+var b =  3;
+var c =  2;
+(a == b) // returns false
+(a == c) 
+
+Undefined - When a variable is declared but not assigned
+var y = undefined;
+
+Symbol -  It is used to store an anonymous and unique value.
+var symbol1 = Symbol('symbol');
+
+Object - Used to store collection of data.
+
+// Collection of data in key-value pairs
+
+var obj1 = {
+   x:  43,
+   y:  "Hello world!",
+   z: function(){
+      return this.x;
+   }
+}
+      
+// Collection of data as an ordered list
+      
+var array1 = [5, "Hello", true, 4.1]; 
+
+
+2. Explain Hoisting in javascript.
+- Hoisting is a default behaviour of javascript where all the variable and function declarations are moved on top.
+
+Example - 
+1
+hoistedVariable = 3;
+console.log(hoistedVariable); // outputs 3 even when the variable is declared after it is initialized	
+var hoistedVariable;
+
+2
+hoistedFunction();  // Outputs " Hello world! " even when the function is declared after calling
+
+function hoistedFunction(){ 
+  console.log(" Hello world! ");
+}
+
+3
+// Hoisting takes place in the local scope as well
+function doSomething(){
+  x = 33;
+  console.log(x);
+  var x;
+}
+
+***** Note - Variable initializations are not hoisted, only variable declarations are hoisted:
+
+4
+var x;
+console.log(x); // Outputs "undefined" since the initialization of "x" is not hoisted
+x = 23;
+
+5
+** Note - To avoid hoisting, you can run javascript in strict mode by using “use strict” on top of the code:
+"use strict";
+x = 23; // Gives an error since 'x' is not declared
+var x; 
+
+3 Difference between “ == “ and “ === “ operators.
+- Both are comparison operators. The difference between both the operators is that,“==” is used to compare values whereas, “ === “ is used to compare both value and types.
+
+Example - 
+1
+var x = 2;
+var y = "2";
+(x == y)  // T
+
+(x === y) // F
+
+4. Explain Implicit Type Coercion in javascript.
+Implicit type coercion in javascript is automatic conversion of value from one data type to another. 
+
+Example - 
+1 
+var x = 3;
+var y = "3";
+x + y // Returns "33" 
+
+2
+var x = 24;
+var y = "Hello";
+x + y   // Returns "24Hello";
+
+**Note - ‘ + ‘ operator when used to add two numbers, outputs a number. The same ‘ + ‘ operator when used to add two strings, outputs the concatenated string:
+var name = "Vivek";
+var surname = " Bisht";
+
+name + surname     // Returns "vivek Bisht"
+
+
+Boolean Coercion
+- Boolean coercion takes place when using logical operators, ternary operators, if statements and loop checks. 
+
+Example -
+If statements:
+Example:
+var x = 0;
+var y = 23;
+        
+if(x) { console.log(x) }   // The code inside this block will not run since the value of x is 0(Falsy)  
+        
+if(y) { console.log(y) }    // The code inside this block will run since the value of y is 23 (Truthy)
+
+Logical operators:
+1 OR ( | | ) operator - If the first value is truthy, then the first value is returned. Otherwise, always the second value gets returned.
+
+2 AND ( && ) operator - If both the values are truthy, always the second value is returned. If the first value is falsy then the first value is returned or if the second value is falsy then the second value is returned.
+
+Example -
+var x = 220;
+var y = "Hello";
+var z = undefined;
+        
+x | | y    // Returns 220 since the first value is truthy
+        
+x | | z   // Returns 220 since the first value is truthy
+        
+x && y    // Returns "Hello" since both the values are truthy
+        
+y && z   // Returns undefined since the second value is falsy
+        
+if( x && y ){ 
+  console.log("Code runs" ); // This block runs because x && y returns "Hello" (Truthy)
+}   
+        
+if( x || z ){
+  console.log("Code runs");  // This block runs because x || y returns 220(Truthy)
+
+ Equality Coercion
+ - The ‘ == ‘ operator compares values and not types.
+
+ Example - 
+ var a = 12;
+var b = "12";
+a == b // Returns true
+
+var a = 226;
+var b = "226";
+
+a === b // Returns false because coercion does not take place and the  operands are of different types. Hence they are not equal.
+
+5. Is javascript a statically typed or a dynamically typed language?
+- avaScript is a dynamically typed language. In a dynamically typed language, the type of a variable is checked during run-time in contrast to statically typed language
+var a = 23;
+var a = "Hello World!";
+
+6. What is NaN property in JavaScript?
+- NaN property represents “Not-a-Number” value. 
+- It indicates a value which is not a legal number.
+Example - 
+isNaN("Hello")  // Returns true
+isNaN(345)   // Returns false
+isNaN(undefined) // Returns true

@@ -1,0 +1,40 @@
+value
+- value is a pice of data.
+variable
+- It is container that conatin or holde the value .
+Null
+- It represents a non-existent or a invalid value.
+Object
+- It is used to store collection of data.
+  or collection of data in key-value pairs.
+
+Undefine
+- The value taken by a variable that is not define yet.
+- A variable is declared but not assigned.
+Example- var x;
+
+ISNAN
+- Not a number.
+- NaN, standing for Not a Number
+Difference b/t  == and ===
+- Both are comarison operatores.
+- The diff is == is used to compare values and === is used to comparevalue and also type.
+
+Strict mode
+- It is a special mode that we can ues in js which makes it easier for us to write a secure JS code.
+                   'use Strict'
+Fuction
+- A Fuction is a pice of code that over an over again in our code.
+- variable holde a value but function holds a multiple value.
+-  function are recive input data, transform data, and then output data.
+
+function declaration
+- function that can be used before it's declared
+function calAge(bithYear) {
+    return 20337 - birthYear;
+
+}
+
+ 
+Hoisting 
+- It is a default bhaviour of JS. Where all the variable and function declarations are moved on top.
